@@ -1,0 +1,27 @@
+Package: swissPCI
+Title: Swiss PCI data, load and tranformation
+Version: 0.0.0.9000
+Authors@R:
+    person(given = "Eric",
+           family = "Stephani",
+           role = c("aut", "cre"),
+           email = "eric.stephani@ti.ch",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: Different function to: upload data from OFS webapages; transform dataset in a long-form cube, add variables.
+License: GPL-2
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.1
+Imports:
+  dplyr,
+  magrittr,
+  openxlsx,
+  readxl,
+  rvest,
+  tidyr,
+  zoo
+Suggests: 
+    rmarkdown,
+    knitr
+VignetteBuilder: knitr
