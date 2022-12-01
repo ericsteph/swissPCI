@@ -5,7 +5,8 @@
 #' The function: \code{get_url_swissPCI} is needed to retrieve the last url and thus the last PCI data (function ResMARTI).
 #'
 #' @param documentsource specific webpage of the Federal Statistical Office, where the data of the Swiss Consumer Price
-#' Index by subject are stored (detailed results since 1982, structure of basket 2020, including additional classifications)
+#' Index by subject are stored (detailed results since 1982, structure of basket 2020, including additional classifications),
+#' by default: "https://www.bfs.admin.ch/bfs/en/home/statistics/prices/consumer-price-index.assetdetail.23772745.html"
 #'
 #' @importFrom rvest read_html html_attr html_nodes html_text
 #' @importFrom magrittr %>%
@@ -17,14 +18,15 @@
 #'
 #' \dontrun{
 #' url_fso <- "https://www.bfs.admin.ch/bfs/en/home/statistics/prices/"
-#' url_swissPCI <- "consumer-price-index.assetdetail.21484856.html"
+#' url_swissPCI <- "consumer-price-index.assetdetail.23772745.html"
 #'
 #' documentsource <- paste0(url_fso, url_swissPCI)
 #' url_basis <- get_url_swissPCI(documentsource)
 #'
 #' }
 #'
-get_url_swissPCI <- function(documentsource){
+get_url_swissPCI <- function(documentsource =
+                               "https://www.bfs.admin.ch/bfs/en/home/statistics/prices/consumer-price-index.assetdetail.23772745.html"){
 
   newdocumentsource = "initial"
 

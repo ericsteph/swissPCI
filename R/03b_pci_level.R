@@ -47,37 +47,37 @@ z <-  Code <-  Level <- Level_0 <- PosNo <- month.yr <- tmp <- w2022 <- wCat <- 
 
 ### Aggiungo livelli
 ### Level_4d
-d0$Level_4d <- -9
-d0$Level_4d <- ifelse(is.na(d0$Level), d0$Level_4d, d0$Level)
+d$Level_4d <- -9
+d$Level_4d <- ifelse(is.na(d$Level), d$Level_4d, d$Level)
 
-d0$Level_4d <- ifelse(d0$PosNo %in% c("6059", "8001", "8006", "10070", "10100", "12190"),
-                      4, d0$Level_4d)
+d$Level_4d <- ifelse(d$PosNo %in% c("6059", "8001", "8006", "10070", "10100", "12190"),
+                      4, d$Level_4d)
 
 ### Level_5d
-d0$Level_5d <- d0$Level_4d
-d0$Level_5d <- ifelse(d0$PosNo %in% c("2064", "2076", "2082", "3183", "3237", "4005", "4010", "4047", "4090", "4100",
+d$Level_5d <- d$Level_4d
+d$Level_5d <- ifelse(d$PosNo %in% c("2064", "2076", "2082", "3183", "3237", "4005", "4010", "4047", "4090", "4100",
                                       "5060", "5090", "5071", "5085", "5120", "5150", "5165", "5181", "5280", "6002",
                                       "6059", "6036", "6070", "7300", "7320", "7500", "8001", "8006", "8018", "8042",
                                       "8045", "9029", "9120", "9151", "9200", "9320", "9340", "9480", "9545", "9555",
                                       "9570", "9580", "10070",	"10100", "10041", "10060", "11171", "11190", "12150",
                                       "12140", "12161", "12170", "12190", "12501", "12510", "12520", "12543", "12547",
                                       "12549", "12534", "12536"),
-                      5, d0$Level_4d)
+                      5, d$Level_4d)
 
 ### Level_6d, Level_7d and Level_8d
-d0$Level_6d <- d0$Level_5d
-d0$Level_6d <- ifelse(d0$PosType == 4 & d0$Level_5d == 5, 6, d0$Level_6d)
+d$Level_6d <- d$Level_5d
+d$Level_6d <- ifelse(d$PosType == 4 & d$Level_5d == 5, 6, d$Level_6d)
 
-d0$Level_7d <- d0$Level_6d
-d0$Level_7d <- ifelse(d0$PosType == 4 & d0$Level_6d == 6, 7, d0$Level_7d)
+d$Level_7d <- d$Level_6d
+d$Level_7d <- ifelse(d$PosType == 4 & d$Level_6d == 6, 7, d$Level_7d)
 
-d0$Level_8d <- d0$Level_7d
-d0$Level_8d <- ifelse(d0$PosType == 4 & d0$Level_7d == 7, 8, d0$Level_8d)
+d$Level_8d <- d$Level_7d
+d$Level_8d <- ifelse(d$PosType == 4 & d$Level_7d == 7, 8, d$Level_8d)
 
 
-colnames(d0)[6] <- labels.x[1]
+colnames(d)[6] <- labels.x[1]
 
-d0_long <- d0 %>%
+d0_long <- d %>%
   pivot_longer(cols = 17:21, names_to = "tmp", values_to = labels.x[2])
 
 # "Pulizia" del d_long

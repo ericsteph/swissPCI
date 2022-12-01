@@ -8,7 +8,7 @@
 #'
 #' @param url_basis specific webpage of the Federal Statistical Office (FSO), where are the most recent data
 #' of the Swiss Consumer Price Index by subject are stored (detailed results since 1982, structure of basket 2020,
-#' including additional classifications)
+#' including additional classifications), by default: "https://dam-api.bfs.admin.ch/hub/api/dam/assets/22804759/master"
 #'
 #' @param name_flr destination folder's name, by default: "excel"
 #'
