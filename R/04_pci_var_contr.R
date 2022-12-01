@@ -37,7 +37,7 @@ tmp <- d %>%
   dplyr::filter(freq.x %in% time.x) %>%
   dplyr::arrange(month.yr)
 
-n <- lenght(tmp)
+n <- length(tmp)
 
 tmp <- tmp %>%
   dplyr::group_by(Code, PosType, w2022) %>%
