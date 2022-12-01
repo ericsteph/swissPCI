@@ -37,6 +37,8 @@ tmp <- d %>%
   dplyr::filter(freq.x %in% time.x) %>%
   dplyr::arrange(month.yr)
 
+n <- lenght(tmp)
+
 tmp <- tmp %>%
   dplyr::group_by(Code, PosType, w2022) %>%
   dplyr::mutate(var1 = ((value - dplyr::lag(x = value, n = k)) / dplyr::lag(x = value, n = k)) * 100,
@@ -44,7 +46,7 @@ tmp <- tmp %>%
   ) %>%
   dplyr::ungroup() %>%
   dplyr::select(-var.x) %>%
-  tidyr::pivot_longer(cols = 15:17, names_to = "var.x") %>%
+  tidyr::pivot_longer(cols = (n-1):(n+1), names_to = "var.x") %>%
   dplyr::arrange(var.x) %>%
   droplevels()
 
